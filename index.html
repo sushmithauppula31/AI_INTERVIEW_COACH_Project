@@ -1,0 +1,115 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Interview Coach</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+ <div class="logo">🎙️ <b>AI Interview Coach</b></div>
+ <button class="ghost" id="th" aria-label="Toggle theme">◐</button>
+</header>
+
+<section id="setup">
+<h1>Practice interviews that feel real.</h1>
+<p class="sub">Answer out loud, get coached on your words, voice, pace and eye contact, and walk into the real thing with confidence.</p>
+
+<div class="grid">
+<div class="card">
+<h2>Your mock interview</h2>
+<label for="role">Role you’re interviewing for</label>
+<input id="role" placeholder="e.g. Junior Data Analyst">
+
+<label for="type">Interview type</label>
+<select id="type">
+<option value="behavioral">Behavioral</option>
+<option value="technical">Technical / role-based</option>
+<option value="hr">HR &amp; motivation</option>
+</select>
+
+<label for="n">Number of questions</label>
+<select id="n"><option>3</option><option selected>5</option></select>
+
+<div class="row" style="margin-top:18px">
+<button class="pri" id="go">Start interview →</button>
+</div>
+<p class="note">No camera or mic? You can still practice by typing your answers.</p>
+</div>
+
+<div class="card">
+<h2>Camera &amp; microphone</h2>
+<div class="video">
+<video id="v0" autoplay muted playsinline class="hide"></video>
+<span id="ph">📷 Camera is off</span>
+</div>
+<div class="row" style="margin-top:12px">
+<button class="tog" id="tc">📷 Camera: off</button>
+<button class="tog" id="tm">🎤 Mic: off</button>
+</div>
+<div class="bar" style="margin-top:12px"><i id="l0"></i></div>
+<p class="note" id="perm">Turn on your camera and microphone for voice and eye-contact feedback.</p>
+</div>
+</div>
+
+<div class="card" style="margin-top:18px">
+<h2>📊 Your interview history</h2>
+<p class="note">Your completed practice sessions are saved on this browser.</p>
+<div id="historyCompare" class="history-compare">Complete your first interview to start tracking your progress.</div>
+<div id="historyList"></div>
+</div>
+</section>
+
+<section id="load" class="hide card">
+<div class="spin"></div>
+<p style="text-align:center" id="lt">Preparing your interviewer…</p>
+</section>
+
+<section id="live" class="hide">
+<div class="grid">
+<div class="card">
+<span class="pill" id="qn"></span>
+<div class="q" id="q"></div>
+<div class="row">
+<button class="ghost" id="hear">🔊 Hear question</button>
+<button class="ghost" id="skip">Skip</button>
+</div>
+<label for="ans">Your answer (transcribed live, or type it)</label>
+<textarea id="ans" placeholder="Tap “Start answering” and speak…"></textarea>
+<div class="row" style="margin-top:12px">
+<button class="pri" id="sa">● Start answering</button>
+<button class="pri hide" id="fa">■ Finish answer</button>
+<span class="rec hide" id="rc">REC <span id="tm2">0:00</span></span>
+</div>
+<p class="note">Tip: aim for 60–120 seconds. Use a clear situation → action → result structure.</p>
+</div>
+
+<div class="card">
+<div class="video">
+<video id="v1" autoplay muted playsinline class="hide"></video>
+<span id="ph1">📷 Camera is off</span>
+</div>
+<div class="meters">
+<div class="m"><b id="wpm">–</b><span>words / min</span></div>
+<div class="m"><b id="fil">0</b><span>filler words</span></div>
+<div class="m"><b id="eye">–</b><span>eye contact</span></div>
+</div>
+<div class="note">Voice level</div>
+<div class="bar"><i id="l1"></i></div>
+<div class="row" style="margin-top:12px">
+<button class="tog" id="tc1">📷 Camera</button>
+<button class="tog" id="tm1">🎤 Mic</button>
+</div>
+<p class="note" id="perm1"></p>
+</div>
+</div>
+</section>
+
+<section id="report" class="hide"></section>
+</div>
+  <script src="js/app.js"></script>
+</body>
+</html>
